@@ -41,7 +41,7 @@ export default function Layout({ title, children }) {
       <Head>
         <title>{title ? title + ' - wellstore' : 'wellstore'}</title>
         <meta name="description" content="Ecommerce Website" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico" />
       </Head>
 
       <ToastContainer position="bottom-center" limit={1} />
