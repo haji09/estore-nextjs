@@ -9,7 +9,7 @@ import { Store } from '../utils/Store';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 export default function Home({ products, featuredProducts }) {
   const { state, dispatch } = useContext(Store);
