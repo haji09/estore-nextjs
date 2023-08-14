@@ -109,7 +109,7 @@ export default function PlaceOrderScreen() {
                         <Link
                           href={`/product/${item.slug}`}
                           className="flex items-center"
-                        >
+                          legacyBehavior>
                           <Image
                             src={item.image}
                             alt={item.name}
