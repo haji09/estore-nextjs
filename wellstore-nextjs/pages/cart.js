@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import XCircleIcon from '@heroicons/react/24/outline/XCircleIcon';
@@ -50,22 +50,25 @@ function CartScreen() {
                 {cartItems.map((item) => (
                   <tr key={item.slug} className="border-b">
                     <td>
-                      <Link
-                        href={`/product/${item.slug}`}
-                        className="flex items-center"
-                        legacyBehavior>
-                        <Image
-                          src={item.image}
-                          alt={item.name}
-                          width={50}
-                          height={50}
-                          style={{
-                            maxWidth: '100%',
-                            height: 'auto',
-                          }}
-                        ></Image>
-                        {item.name}
-                      </Link>
+                      <div className="flex gap-2">
+                        <Link
+                          href={`/product/${item.slug}`}
+                          className="flex items-center"
+                          legacyBehavior
+                        >
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            width={50}
+                            height={50}
+                            style={{
+                              maxWidth: '100%',
+                              height: 'auto',
+                            }}
+                          ></Image>
+                        </Link>
+                        <p className="flex items-center">{item.name}</p>
+                      </div>
                     </td>
                     <td className="p-5 text-right">
                       <select
