@@ -1,5 +1,5 @@
 import { signOut, useSession } from 'next-auth/react';
-
+import Head from 'next/head';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import React, { useContext, useEffect, useState } from 'react';
@@ -38,6 +38,10 @@ export default function Layout({ title, children }) {
 
   return (
     <>
+      <Head>
+        <title>{title ? title + ' - wellstore' : 'wellstore'}</title>
+      </Head>
+
       <ToastContainer position="bottom-center" limit={1} />
 
       <div className="flex min-h-screen flex-col justify-between ">

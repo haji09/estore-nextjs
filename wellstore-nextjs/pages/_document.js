@@ -4,8 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>{title ? title + ' - wellstore' : 'wellstore'}</title>
-        <meta name="description" content="Ecommerce Website" />
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <body className="bg-[url('/assets/images/bg2.jpg')] bg-cover bg-center  font-bodyFont">
