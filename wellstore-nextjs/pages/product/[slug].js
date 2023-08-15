@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
@@ -66,7 +66,7 @@ export default function ProductScreen(props) {
           <div className="card p-5">
             <div className="mb-2 flex justify-between">
               <div>Price</div>
-              <div>₹{product.price}</div>
+              <div>${product.price}</div>
             </div>
             <div className="mb-2 flex justify-between">
               <div>Status</div>

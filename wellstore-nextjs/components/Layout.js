@@ -10,7 +10,6 @@ import { Store } from '../utils/Store';
 import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import SearchIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
-import ShoppingCartIcon from '@heroicons/react/24/outline/ShoppingCartIcon';
 
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
@@ -39,16 +38,18 @@ export default function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title ? title + ' - wellstore' : 'wellstore'}</title>
+        <title>{title ? title + ' - Amazona' : 'Amazona'}</title>
+        <meta name="description" content="Ecommerce Website" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <ToastContainer position="bottom-center" limit={1} />
 
       <div className="flex min-h-screen flex-col justify-between ">
         <header>
-          <nav className="flex h-12 md:h-16 items-center px-4 justify-between shadow-md">
-            <Link href="/" className="text-lg md:text-3xl font-bold md:ml-5">
-              wellstore
+          <nav className="flex h-12 items-center px-4 justify-between shadow-md">
+            <Link href="/" className="text-lg font-bold">
+              amazona
             </Link>
             <form
               onSubmit={submitHandler}
@@ -68,17 +69,15 @@ export default function Layout({ title, children }) {
                 <SearchIcon className="h-5 w-5"></SearchIcon>
               </button>
             </form>
-            <div className="flex items-center z-10 md:gap-5 md:text-lg md:mr-5">
-              <div>
-                <Link href="/cart" className="p-2 flex" legacyBehavior>
-                  <ShoppingCartIcon className="h-6 w-6  text-black"></ShoppingCartIcon>
-                </Link>
+            <div className="flex items-center z-10">
+              <Link href="/cart" className="p-2">
+                Cart
                 {cartItemsCount > 0 && (
                   <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
                     {cartItemsCount}
                   </span>
                 )}
-              </div>
+              </Link>
 
               {status === 'loading' ? (
                 'Loading'
@@ -87,7 +86,7 @@ export default function Layout({ title, children }) {
                   <Menu.Button className="text-blue-600">
                     {session.user.name}
                   </Menu.Button>
-                  <Menu.Items className="flex flex-col p-5 absolute right-0 w-60 origin-top-right bg-white  shadow-lg ">
+                  <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
                     <Menu.Item>
                       <DropdownLink className="dropdown-link" href="/profile">
                         Profile
@@ -132,7 +131,7 @@ export default function Layout({ title, children }) {
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
-          <p>Copyright © 2023 wellstore</p>
+          <p>Copyright © 2022 Amazona</p>
         </footer>
       </div>
     </>

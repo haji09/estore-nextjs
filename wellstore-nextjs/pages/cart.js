@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import XCircleIcon from '@heroicons/react/24/outline/XCircleIcon';
@@ -50,25 +50,22 @@ function CartScreen() {
                 {cartItems.map((item) => (
                   <tr key={item.slug} className="border-b">
                     <td>
-                      <div className="flex gap-2">
-                        <Link
-                          href={`/product/${item.slug}`}
-                          className="flex items-center"
-                          legacyBehavior
-                        >
-                          <Image
-                            src={item.image}
-                            alt={item.name}
-                            width={50}
-                            height={50}
-                            style={{
-                              maxWidth: '100%',
-                              height: 'auto',
-                            }}
-                          ></Image>
-                        </Link>
-                        <p className="flex items-center">{item.name}</p>
-                      </div>
+                      <Link
+                        href={`/product/${item.slug}`}
+                        className="flex items-center"
+                      >
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          width={50}
+                          height={50}
+                          style={{
+                            maxWidth: '100%',
+                            height: 'auto',
+                          }}
+                        ></Image>
+                        {item.name}
+                      </Link>
                     </td>
                     <td className="p-5 text-right">
                       <select
@@ -84,7 +81,7 @@ function CartScreen() {
                         ))}
                       </select>
                     </td>
-                    <td className="p-5 text-right">₹{item.price}</td>
+                    <td className="p-5 text-right">${item.price}</td>
                     <td className="p-5 text-center">
                       <button onClick={() => removeItemHandler(item)}>
                         <XCircleIcon className="h-5 w-5"></XCircleIcon>
@@ -99,7 +96,7 @@ function CartScreen() {
             <ul>
               <li>
                 <div className="pb-3 text-xl">
-                  Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : ₹
+                  Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
                   {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
                 </div>
               </li>

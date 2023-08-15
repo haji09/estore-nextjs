@@ -1,7 +1,7 @@
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useReducer } from 'react';
@@ -220,7 +220,7 @@ function OrderScreen() {
                         <Link
                           href={`/product/${item.slug}`}
                           className="flex items-center"
-                          legacyBehavior>
+                        >
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -235,9 +235,9 @@ function OrderScreen() {
                         </Link>
                       </td>
                       <td className=" p-5 text-right">{item.quantity}</td>
-                      <td className="p-5 text-right">₹{item.price}</td>
+                      <td className="p-5 text-right">${item.price}</td>
                       <td className="p-5 text-right">
-                        ₹{item.quantity * item.price}
+                        ${item.quantity * item.price}
                       </td>
                     </tr>
                   ))}
@@ -252,25 +252,25 @@ function OrderScreen() {
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Items</div>
-                    <div>₹{itemsPrice}</div>
+                    <div>${itemsPrice}</div>
                   </div>
                 </li>{' '}
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Tax</div>
-                    <div>₹{taxPrice}</div>
+                    <div>${taxPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Shipping</div>
-                    <div>₹{shippingPrice}</div>
+                    <div>${shippingPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Total</div>
-                    <div>₹{totalPrice}</div>
+                    <div>${totalPrice}</div>
                   </div>
                 </li>
                 {!isPaid && (
