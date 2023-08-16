@@ -47,8 +47,8 @@ export default function Layout({ title, children }) {
 
       <div className="flex min-h-screen flex-col justify-between ">
         <header>
-          <nav className="flex h-12 items-center px-4 md:px-8 justify-between shadow-md">
-            <Link href="/" className="text-lg font-bold">
+          <nav className="flex h-16 items-center px-4 md:px-14 justify-between shadow-md">
+            <Link href="/" className="text-lg md:text-2xl font-bold">
               E-store
             </Link>
             <form
@@ -69,8 +69,8 @@ export default function Layout({ title, children }) {
                 <SearchIcon className="h-5 w-5"></SearchIcon>
               </button>
             </form>
-            <div className="flex items-center z-10">
-              <Link href="/cart" className="p-2">
+            <div className="flex items-center gap-8 z-10">
+              <Link href="/cart" className="p-2 md:text-lg">
                 Cart
                 {cartItemsCount > 0 && (
                   <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
@@ -83,7 +83,7 @@ export default function Layout({ title, children }) {
                 'Loading'
               ) : session?.user ? (
                 <Menu as="div" className="relative inline-block">
-                  <Menu.Button className="text-blue-600">
+                  <Menu.Button className="text-blue-600 md:text-lg">
                     {session.user.name}
                   </Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
