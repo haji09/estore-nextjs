@@ -46,6 +46,7 @@ export default function ProductScreen(props) {
             style={{
               width: '100%',
               height: 'auto',
+              maxWidth: '100%',
             }}
           ></Image>
         </div>

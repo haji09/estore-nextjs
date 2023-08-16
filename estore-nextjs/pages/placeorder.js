@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Image from "next/image";
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
@@ -106,19 +106,21 @@ export default function PlaceOrderScreen() {
                   {cartItems.map((item) => (
                     <tr key={item._id} className="border-b">
                       <td>
-                        <Link href={`/product/${item.slug}`} className="flex items-center">
-
+                        <Link
+                          href={`/product/${item.slug}`}
+                          className="flex items-center"
+                        >
                           <Image
                             src={item.image}
                             alt={item.name}
                             width={50}
                             height={50}
                             style={{
-                              maxWidth: "100%",
-                              height: "auto"
-                            }}></Image>
+                              maxWidth: '100%',
+                              height: 'auto',
+                            }}
+                          ></Image>
                           {item.name}
-
                         </Link>
                       </td>
                       <td className=" p-5 text-right">{item.quantity}</td>

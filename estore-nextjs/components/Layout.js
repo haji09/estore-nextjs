@@ -38,7 +38,7 @@ export default function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title ? title + ' - Amazona' : 'Amazona'}</title>
+        <title>{title ? title + ' - E-store' : 'E-store'}</title>
         <meta name="description" content="Ecommerce Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -49,7 +49,7 @@ export default function Layout({ title, children }) {
         <header>
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
             <Link href="/" className="text-lg font-bold">
-              amazona
+              E-store
             </Link>
             <form
               onSubmit={submitHandler}
