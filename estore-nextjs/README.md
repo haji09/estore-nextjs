@@ -1,4 +1,4 @@
-# Build Nextjs ECommerce Website Like Amazon
+# Build Nextjs ECommerce Website
 
 - Tech: Nextjs 13, Next Auth 4
 - UI: Tailwind, chart.js, react-chartjs
@@ -7,16 +7,7 @@
 - Content Hosting: cloudinary
 - Deploy: Github, Vercel, MongoDB Atlas
 
-![next amazona](/public/app.jpg)
-
-## Resources
-
-- Youtube Video : https://youtu.be/_IBlyR5mRzA
-- Demo Website :  https://next-tailwind-amazona.vercel.app
-- Source Code   :  https://github.com/basir/next-tailwind-amazona
-- Full Course: [basir.thinkific.com](https://basir.thinkific.com/courses/build-ecommerce-website-like-amazon-by-next-js?coupon=SAVE90)
-
-## What you will learn
+## Overview
 
 - NextJS basics like setting up project, navigating between pages and data fetching
 - NextJS advanced topics like dynamic routing, image optimization,  SSG and SSR
@@ -37,19 +28,17 @@ https://basir.thinkific.com/courses/build-ecommerce-website-like-amazon-by-next-
 1. Clone repo
 
    ```shell
-    $ git clone git@github.com:basir/next-tailwind-amazona.git
-    $ cd next-tailwind-amazona
+    $ git clone git@github.com:haji09/estore-nextjs.git
+    $ cd estore-nextjs
    ```
 
 2. Create .env File
-
-   - duplicate .env.example and rename it to .env
 
 3. Setup MongoDB
 
    - Local MongoDB
    - Install it from [here](https://www.mongodb.com/try/download/community)
-   - In .env file update MONGODB_URI=mongodb://localhost/amazona
+   - In .env file update MONGODB_URI=mongodb://localhost/estore
    - OR Atlas Cloud MongoDB
    - Create database at [https://cloud.mongodb.com](https://cloud.mongodb.com)
    - In .env file update MONGODB_URI=mongodb+srv://your-db-connection
