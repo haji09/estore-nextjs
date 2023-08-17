@@ -47,8 +47,11 @@ export default function Layout({ title, children }) {
 
       <div className="flex min-h-screen flex-col justify-between ">
         <header>
-          <nav className="flex h-16 items-center px-4 md:px-14 justify-between shadow-md">
-            <Link href="/" className="text-lg md:text-2xl font-bold">
+          <nav className="bg-blue-950 flex h-16 items-center px-4 md:px-14 justify-between shadow-md">
+            <Link
+              href="/"
+              className="text-yellow-300 tracking-widest text-lg md:text-2xl font-extrabold"
+            >
               E-store
             </Link>
             <form
@@ -70,7 +73,10 @@ export default function Layout({ title, children }) {
               </button>
             </form>
             <div className="flex items-center gap-8 z-10">
-              <Link href="/cart" className="p-2 md:text-lg">
+              <Link
+                href="/cart"
+                className="text-gray-300 font-bold p-2 md:text-lg"
+              >
                 Cart
                 {cartItemsCount > 0 && (
                   <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
@@ -83,10 +89,10 @@ export default function Layout({ title, children }) {
                 'Loading'
               ) : session?.user ? (
                 <Menu as="div" className="relative inline-block">
-                  <Menu.Button className="text-blue-600 md:text-lg">
+                  <Menu.Button className="text-gray-300 font-bold md:text-lg border-2 border-teal-300 rounded-lg px-3 py-1">
                     {session.user.name}
                   </Menu.Button>
-                  <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
+                  <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white rounded-lg  shadow-lg ">
                     <Menu.Item>
                       <DropdownLink className="dropdown-link" href="/profile">
                         Profile
@@ -122,7 +128,10 @@ export default function Layout({ title, children }) {
                   </Menu.Items>
                 </Menu>
               ) : (
-                <Link href="/login" className="p-2">
+                <Link
+                  href="/login"
+                  className="text-gray-300 font-bold md:text-lg border-2 border-teal-300 rounded-lg px-3 py-1"
+                >
                   Login
                 </Link>
               )}
