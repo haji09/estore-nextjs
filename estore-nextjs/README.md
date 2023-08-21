@@ -57,9 +57,9 @@
    - Run http://localhost:3000/login
    - Enter admin email and password and click Login
 
-## Lessons
+## Steps
 
-1. Introduction
+1. Open the VScode editor
 2. Install Tools
 3. Create Next App
 4. Publish to Github
